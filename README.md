@@ -30,23 +30,42 @@ Libreria:
 Ejemplo
 
 #include "ninebot.h"
+
 #include "m365_register_map.h"
+
 ...
+
 NinebotPack NB_BLE_data_in,NB_BLE_data_out;
+
 ...
+
 uint8_t dataUART_NB_buffer[NinebotMaxPayload+8];
+
 uint8_t data_NB_payload[NinebotMaxPayload];
+
 ...
 data_NB_payload[1]=0x00;
+
 data_NB_payload[0]=M365cruiseon;
+
 ninebot_create_pack(MastertoM365, Ninebotwrite , M365cruiseREG , (M365cruiseLEN+2), data_NB_payload, &NB_BLE_data_out);
+
 ninebot_serialyze(&NB_BLE_data_out,dataUART_NB_buffer);
+
 send dataUART_NB_buffer via ble
+
 ...
+
 ninebot_create_request(MastertoM365,Ninebotread,M365battREG, M365battLEN + M365speedLEN, &NB_BLE_data_out);
+
 ninebot_serialyze(&NB_BLE_data_out,dataUART_NB_buffer);
+
 send dataUART_NB_buffer via ble
+
 ...
+
 error = ninebot_parse(Uart_Data_in, Uart_data_len), &NB_BLE_data_in);
+
 if (error ==0){//todo bien
+
 ....
