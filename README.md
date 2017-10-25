@@ -24,3 +24,29 @@ La idea es ir completando y conocer con certeza el significado de todos los regi
 Si usan los datos que publico en este repositorio o lo publican en otro lugar, por favor indiquen la fuente y darme los creditos.
 Saludos
 Camilo
+
+Libreria:
+
+Ejemplo
+
+#include "ninebot.h"
+#include "m365_register_map.h"
+...
+NinebotPack NB_BLE_data_in,NB_BLE_data_out;
+...
+uint8_t dataUART_NB_buffer[NinebotMaxPayload+8];
+uint8_t data_NB_payload[NinebotMaxPayload];
+...
+data_NB_payload[1]=0x00;
+data_NB_payload[0]=M365cruiseon;
+ninebot_create_pack(MastertoM365, Ninebotwrite , M365cruiseREG , (M365cruiseLEN+2), data_NB_payload, &NB_BLE_data_out);
+ninebot_serialyze(&NB_BLE_data_out,dataUART_NB_buffer);
+send dataUART_NB_buffer via ble
+...
+ninebot_create_request(MastertoM365,Ninebotread,M365battREG, M365battLEN + M365speedLEN, &NB_BLE_data_out);
+ninebot_serialyze(&NB_BLE_data_out,dataUART_NB_buffer);
+send dataUART_NB_buffer via ble
+...
+error = ninebot_parse((uint8_t *)(p_ble_nus_evt->p_data), (uint8_t)(p_ble_nus_evt->data_len), &NB_BLE_data_in);
+if (error ==0){//todo bien
+....
