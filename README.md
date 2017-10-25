@@ -47,6 +47,6 @@ ninebot_create_request(MastertoM365,Ninebotread,M365battREG, M365battLEN + M365s
 ninebot_serialyze(&NB_BLE_data_out,dataUART_NB_buffer);
 send dataUART_NB_buffer via ble
 ...
-error = ninebot_parse((uint8_t *)(p_ble_nus_evt->p_data), (uint8_t)(p_ble_nus_evt->data_len), &NB_BLE_data_in);
+error = ninebot_parse(Uart_Data_in, Uart_data_len), &NB_BLE_data_in);
 if (error ==0){//todo bien
 ....
