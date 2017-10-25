@@ -1,12 +1,13 @@
 # M365-BLE-PROTOCOL
 
-The files and documents here are publihed under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 2.1 of the License, or (at your option) any later version.
+The files and documents in this repository are published under the terms of the 
+GNU Lesser General Public License as published by the Free Software Foundation; 
+either version 2.1 of the License, or (at your option) any later version.
 
 Los archivos y documentos publicados aquí estan publicados bajo la licencia 
 GNU Lesser General Public License.
-Si usan los datos de este repositorio o lo publican en otro lugar, por favor indiquen la fuente.
+
+Si usan los datos de este repositorio, por favor indiquen la fuente y darme los creditos correspondientes.
 
 Reverse engineering of Bluetooth LE protocol used to communicate between mihome APP an the scooter
 Ingenieria inversa del protocolo usado para la comunicacion entre el patinete mijia m365 y la aplicacion mihome
