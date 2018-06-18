@@ -185,7 +185,8 @@ no se ¿mAh recargados en el patinete?
 55aa:03:2201:1b:04:baff
 55aa:06:2501:1b:01:00:03:00:b4ff 
 --------------------------------
-pregunta 10 cosas, mAh en la batería, porcentaje, voltaje de la batería, temperatura
+Fields 0x31 - 0x35 
+pregunta 10 cosas, mAh en la batería, porcentaje, current in A /100, voltaje de la batería, temperatura
 55aa:03:2201:31:0a:9eff			
 55aa:0c:2501:31:361e:6300:0100:0910:3131:69fe
 --------------------------------
